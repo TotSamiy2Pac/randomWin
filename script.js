@@ -10,7 +10,6 @@ const randomFunc = () => {
     resultRandom = Math.round(Math.random()*10)
     resultSpan.style.display = 'block'
     resultSpan.innerHTML = `Число рандома: ${resultRandom}`
-
     if (Number(input.value) === Number(resultRandom)){
         spanWin.style.display = 'block'
         spanLose.style.display = 'none'
@@ -22,5 +21,11 @@ const randomFunc = () => {
 }
 
 btnChek.addEventListener('click', () => {
-    randomFunc()
+    if (!!input.value === true){
+        randomFunc()
+    }
+    else {
+        resultSpan.style.display = 'block'
+        resultSpan.innerHTML = 'Введите число'
+    }
 })
